@@ -34,3 +34,9 @@ jobs:
 
     - name: Verify
       run: echo ${{ steps.docker_build.outputs.digest }}
+    - name: send notification
+      uses: cinotify/github-action@main
+      with:
+        to: 'vantintttp@gmail.com'
+        subject: 'building main'
+        body: 'This is a notification from GitHub actions.'
